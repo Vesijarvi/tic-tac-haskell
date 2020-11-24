@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ea547a3674862cbf3c9cbd4c609a77b9592309d001bf49125ee1b2d33a178728
+-- hash: c9ef9bcb234547b2e80baa1f10b659737d07b03f6c063cb97b154db36903dc47
 
 name:           tic-tac-haskell
 version:        0.1.0.0
@@ -27,7 +27,8 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Game
+      Main
   other-modules:
       Paths_tic_tac_haskell
   hs-source-dirs:
