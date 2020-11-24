@@ -34,3 +34,43 @@ oCell = thickCircle radius 10.0
     where radius = min cellWidth cellHeight * 0.25
 
 cellsOfBoard :: Board -> Cell -> Picture -> Picture
+cellsOfBoard board cell cellPicture = 
+    pictures 
+    $ map (snapPictureToCell cellPicture . fst)
+    $ filter (\(_,e) -> e == cell)
+    $ assocs board
+
+xCellsOfBoard :: Board -> Picture
+xCellsOfBoard = cellsOfBoard board (Just PlayerX) xCell
+
+oCellsOfBoard :: Board -> Picture
+oCellsOfBoard = cellsOfBoard board (Just PlayerO) oCell
+
+boardGrid :: Picture
+boardGird = pictures 
+    $ concatMap (\i -> [ line [ (i * cellWidth, 0.0)
+                              , (i * cellWidth, fromIntegral screenHeight)
+                              ] 
+                       , line [ (0.0,                      i * cellHeight)
+                              , (fromIntegral screenWidth, i * cellHeight)
+                              ]
+                       ])
+     [0.0 .. fromIntegral n]
+
+boarAsPicture board = 
+    pictures [ xCellsOfBoard board
+             , oCellsOfBoard board
+             , boardGrid
+             ]
+
+boardAsGameOverPicture winner board = color (outcomeColor winner) (boardAsPicture board)
+
+gameAsPicture :: Game -> Picture
+gameAsPicture game = translate (fromIntegral screenWidth * (-0.5))
+                               (fromIntegral screenHeight * (-0.5))
+                               frame
+    where frame = case gameState game of 
+                    Running -> boardAsRunningPicture (gameBoard game)
+                    GaveOver winner -> boardAsGameOverPicture winner (gameBoard game)
+
+
