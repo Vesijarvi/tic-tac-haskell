@@ -2,8 +2,8 @@ name:                tic-tac-haskell
 version:             0.1.0.0
 github:              "githubuser/tic-tac-haskell"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
+author:              YiPing Pan <pan.yiping.fi@gmail.com>
+maintainer:          pan.yiping.fi@gmail.com
 copyright:           "2020 Author name here"
 
 extra-source-files:
@@ -19,8 +19,7 @@ extra-source-files:
 # common to point users to the README.md file.
 description:         Please see the README on GitHub at <https://github.com/githubuser/tic-tac-haskell#readme>
 
-dependencies:
-- base >= 4.7 && < 5
+dependencies:       base >= 4.7 && < 5
 
 library:
   source-dirs: src
