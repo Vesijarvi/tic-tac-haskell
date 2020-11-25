@@ -1,5 +1,6 @@
 # tic-tac-haskell
 
+! [screenshot](https://github.com/yppan/tic-tac-haskell/blob/main/ScreenShot.png)
 
 ## Dependencies
 
