@@ -10,8 +10,8 @@ isCoordCorrect = inRange ((0, 0), (n-1, n-1))
 
 switchPlayer game = 
     case gamePlayer game of
-      PlayerX -> Game { gamePlayer = PlayerO }
-      PlayerO -> Game { gamePlayer = PlayerX }
+      PlayerX -> game { gamePlayer = PlayerO }
+      PlayerO -> game { gamePlayer = PlayerX }
 
 full :: [Cell] -> Maybe Player
 full (cell@(Just player):cells) | all (== cell) cells = Just player
