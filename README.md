@@ -1,5 +1,7 @@
 # tic-tac-haskell
 
+tic-tac-toe game implemented in Haskell
+
 ![screenshot](https://github.com/yppan/tic-tac-haskell/blob/main/ScreenShot.png)
 
 ## Dependencies
