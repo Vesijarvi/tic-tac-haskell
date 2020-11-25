@@ -9,6 +9,6 @@
 
 ## How to run code 
 ```
-$cabel build
-$cabel run
+$ cabel build
+$ cabel run
 ```
